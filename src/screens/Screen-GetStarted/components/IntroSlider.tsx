@@ -9,22 +9,34 @@ import {
 
 const { width } = Dimensions.get("window");
 
-export function IntroSlider() {
-    const [sliderState, setSliderState] = useState({ currentPage: 0 });
+export function IntroSlider(props: {
+    setSliderState: React.Dispatch<
+        React.SetStateAction<{
+            currentPage: number;
+        }>
+    >;
+    sliderState: { currentPage: number };
+}) {
+    // const [sliderState, setSliderState] = useState({ currentPage: 0 });
+    console.log("slider State", props.sliderState);
 
     const setSliderPage = (event: any) => {
-        const { currentPage } = sliderState;
+        const { currentPage } = props.sliderState;
         const { x } = event.nativeEvent.contentOffset;
         const indexOfNextScreen = Math.floor(x / width);
         if (indexOfNextScreen !== currentPage) {
-            setSliderState({
-                ...sliderState,
+            // props.handlerFunction({
+            //     ...props.sliderState,
+            //     currentPage: indexOfNextScreen,
+            // });
+            props.setSliderState({
+                ...props.sliderState,
                 currentPage: indexOfNextScreen,
             });
         }
     };
 
-    const { currentPage: pageIndex } = sliderState;
+    const { currentPage: pageIndex } = props.sliderState;
 
     return (
         <>
@@ -34,9 +46,7 @@ export function IntroSlider() {
                 scrollEventThrottle={16}
                 pagingEnabled={true}
                 showsHorizontalScrollIndicator={false}
-                onScroll={(event: any) => {
-                    setSliderPage(event);
-                }}
+                onScroll={(event: any) => setSliderPage(event)}
             >
                 <GetStarted1 />
                 <GetStarted2 />

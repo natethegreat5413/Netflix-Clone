@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Dimensions } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
 export function GetStarted4() {
     const { width, height } = Dimensions.get("window");
@@ -12,6 +13,7 @@ export function GetStarted4() {
                 alignItems: "center",
             }}
         >
+            {/* <Icons /> */}
             <Text style={{ color: "white", fontWeight: "700", fontSize: 38 }}>
                 Watch
             </Text>
@@ -28,3 +30,11 @@ export function GetStarted4() {
         </View>
     );
 }
+
+const Icons = () => {
+    return (
+        <View>
+            <FontAwesome name="tv" size={24} color="white" />
+        </View>
+    );
+};
