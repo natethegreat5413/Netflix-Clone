@@ -16,8 +16,8 @@ export default function AuthStack(): JSX.Element {
   // console.log('state', state);
   return (
     <Stack.Navigator initialRouteName="LoginScreen">
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}}/>
+      <Stack.Screen name="SignUpScreen" component={SignUpScreen} options={{headerShown: false}}/>
       <Stack.Screen
         name="ForgotPasswordScreen"
         component={ForgotPasswordScreen}

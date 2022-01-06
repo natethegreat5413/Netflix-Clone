@@ -8,9 +8,24 @@ export function GetStarted1() {
     return (
         <SafeAreaView style={{flex: 1, justifyContent: 'space-between', backgroundColor: 'black'}}>
             <GetStartedHeader />
-
+            
+            <MainContent />
             <GetStartedButton />
+            
         </SafeAreaView>
+    )
+}
+
+const MainContent = () => {
+    return (
+        <View style={{alignItems: 'center'}}>
+            <Text style={{color: 'white', fontWeight: '700', fontSize: 38}}>Unlimited</Text>
+            <Text style={{color: 'white', fontWeight: '700', fontSize: 38}}>movies, TV</Text>
+            <Text style={{color: 'white', fontWeight: '700', fontSize: 38}}>shows & more</Text>
+            <View style={{height: 20}}/>
+            <Text style={{color: '#BEBEBF', fontSize: 20}}>Watch Anywhere. Cancel</Text>
+            <Text style={{color: '#BEBEBF', fontSize: 20}}>anytime.</Text>
+        </View>
     )
 }
 

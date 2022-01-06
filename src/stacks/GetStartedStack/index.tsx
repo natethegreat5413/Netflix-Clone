@@ -5,10 +5,6 @@ import { GetStarted1 } from '../../screens';
 
 const Stack = createStackNavigator();
 
-export const EmptyView = () => {
-  return <View style={{ flex: 1, backgroundColor: 'dodgerblue' }} />;
-};
-
 export default function GetStartedStack(): JSX.Element {
   // console.log('state', state);
   return (

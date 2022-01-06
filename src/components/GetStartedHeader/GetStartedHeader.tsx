@@ -1,8 +1,11 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { Fontisto, Entypo } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-export function GetStartedHeader({navigation}) {
+
+export function GetStartedHeader() {
+    const navigation = useNavigation()
     return (
         <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: '90%', alignSelf: 'center'}}>
             <Fontisto name="netflix" size={44} color='#E50914' />
